@@ -18,9 +18,9 @@ export class AppComponent {
   }
 
   getUser() {
-    this.http.get('/user/findAll').subscribe(res => {
-      this.user = res;
-      console.log(this.user);
-    })
+    // this.http.get('/user/findAll').subscribe(res => {
+    //   this.user = res;
+    //   console.log(this.user);
+    // })
   }
 }
