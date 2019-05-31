@@ -10,7 +10,12 @@ const routes: Routes = [
   // { path: 'heroes', component: HeroComponent },
   // { path: 'dashboard', component: DashboardComponent },
   // { path: 'detail/:id', component: HeroDetailComponent }
-  { path: '', component: LayoutComponent }
+  {
+    path: '', component: LayoutComponent,
+    children: [
+      { path: 'home', component: DashboardComponent }
+    ]
+  }
 ];
 
 @NgModule({
