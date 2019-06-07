@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +19,8 @@ import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh'
 import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
 import { LayoutComponent } from './layout/layout.component';
+import { LoginComponent } from './login/login.component';
+import { SigninComponent } from './signin/signin.component';
 // 引入你需要的图标，比如你需要 fill 主题的 AccountBook Alert 和 outline 主题的 Alert，推荐 ✔️
 registerLocaleData(zh);
 
@@ -32,7 +34,9 @@ registerLocaleData(zh);
     MessagesComponent,
     DashboardComponent,
     HeroSearchComponent,
-    LayoutComponent
+    LayoutComponent,
+    LoginComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +44,7 @@ registerLocaleData(zh);
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     NgZorroAntdModule
   ],
   providers: [
