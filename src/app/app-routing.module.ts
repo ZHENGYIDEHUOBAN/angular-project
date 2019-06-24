@@ -4,7 +4,7 @@ import { HeroComponent } from './hero/hero.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { LayoutComponent } from './layout/layout.component';
-import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
@@ -18,7 +18,7 @@ const routes: Routes = [
       { path: 'home', component: DashboardComponent }
     ]
   },
-  { path: 'signin', component: SigninComponent },
+  { path: 'signin', component: SignupComponent },
   { path: 'login', component: LoginComponent }
 ];
 

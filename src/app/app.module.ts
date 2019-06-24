@@ -20,7 +20,8 @@ import zh from '@angular/common/locales/zh'
 import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
 import { LayoutComponent } from './layout/layout.component';
 import { LoginComponent } from './login/login.component';
-import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
+import { Page404Component } from './page404/page404.component';
 // 引入你需要的图标，比如你需要 fill 主题的 AccountBook Alert 和 outline 主题的 Alert，推荐 ✔️
 registerLocaleData(zh);
 
@@ -36,7 +37,8 @@ registerLocaleData(zh);
     HeroSearchComponent,
     LayoutComponent,
     LoginComponent,
-    SigninComponent
+    SignupComponent,
+    Page404Component
   ],
   imports: [
     BrowserModule,
