@@ -5,8 +5,12 @@
       <li nz-submenu>
         <span title><i nz-icon type="user"></i><span class="nav-text">User</span></span>
         <ul>
-          <li nz-menu-item>Tom</li>
-          <li nz-menu-item>Bill</li>
+          <li nz-menu-item>
+            <a [routerLink]="'/user'">Tom</a>
+          </li>
+          <li nz-menu-item>
+            <a [routerLink]="'/'">Bill</a>
+          </li>
           <li nz-menu-item>Alex</li>
         </ul>
       </li>
@@ -32,9 +36,7 @@
       ></i>
     </nz-header>
     <nz-content style="margin:0 16px;">
-      <nz-breadcrumb style="margin:16px 0;">
-        <nz-breadcrumb-item>User</nz-breadcrumb-item>
-        <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
+      <nz-breadcrumb style="margin:16px 0;" [nzAutoGenerate]="true">
       </nz-breadcrumb>
       <div style="padding:24px; background: #fff; min-height: 360px; height: 100%;">
         <router-outlet></router-outlet>

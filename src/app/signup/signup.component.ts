@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { UserService } from '../user.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-signup',
@@ -14,6 +16,17 @@ export class SignupComponent implements OnInit {
     for (const i in this.validateForm.controls) {
       this.validateForm.controls[i].markAsDirty();
       this.validateForm.controls[i].updateValueAndValidity();
+    }
+    const { status, value } = this.validateForm;
+    if (status === 'VALID') {
+      const user: User = {
+        nickname: value.nickname,
+        email: value.email,
+        password: value.password
+      };
+      this.userService.regsiter(user).subscribe(res => {
+        console.log(res);
+      });
     }
   }
 
@@ -35,7 +48,10 @@ export class SignupComponent implements OnInit {
     e.preventDefault();
   }
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private userService: UserService,
+  ) {}
 
   ngOnInit(): void {
     this.validateForm = this.fb.group({
@@ -44,9 +60,9 @@ export class SignupComponent implements OnInit {
       checkPassword: [null, [Validators.required, this.confirmationValidator]],
       nickname: [null, [Validators.required]],
       phoneNumberPrefix: ['+86'],
-      phoneNumber: [null, [Validators.required]],
-      website: [null, [Validators.required]],
-      captcha: [null, [Validators.required]],
+      phoneNumber: [null],
+      website: [null],
+      captcha: [null],
       agree: [false]
     });
   }
